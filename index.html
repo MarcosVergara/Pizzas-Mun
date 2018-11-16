@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,500,700" rel="stylesheet">
+    <title>Inicio | Pizzas Mun</title>
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png">
+    <link rel="stylesheet" href="vendors/css/ionicons.css">
+    <link rel="stylesheet" href="vendors/css/normalize.css">
+    <link rel="stylesheet" href="vendors/css/grid.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+</head>
+<body> 
+    <header class="header">
+        <nav class="navbar">
+            <div class="row">
+                <img src="img/logo.png" alt="Logo" class="logo">
+                <ul class="main-nav">
+                    <a href="#about-us"><li>Sobre Nosotros</li></a>
+                    <a href=""><li>Nuestro Menú</li></a>
+                    <a href=""><li>Galería</li></a>
+                    <a href=""><li>Contacto</li></a>
+                    
+                </ul>
+            </div>
+        </nav>
+        <div class="header__text-box">
+            <h1 class="header__title">
+                <span>Pizzas mun</span> <br> Las mejores pizzas a la parrilla
+            </h1>
+            <a href="#" class="btn btn-full">Ir al menú</a>
+            <a href="#" class="btn btn-ghost">Contactanos</a>
+        </div>
+    </header>
+    <section class="about-us" id="about-us">
+        <div class="row">
+            <h2 class="section-title">Sobre nosotros</h2>
+            <p class="long-copy">
+                Hola! somos Pizzas Mun, una empresa familiar la cual ofrece un servicio de diferentes comidas centradas especialmente al espeto corrido de pizzas a la parrilla.
+            </p>
+            <h2 class="section-title">Algunas de nuestras caracteristicas</h2>
+        </div>
+        <div class="row">
+            <div class="col span-1-of-4 box">
+                <i class="icon-big ion-leaf"></i>
+                <h3 class="third-title">Comidas caceras</h3>
+                <p>Todas las comidas incluidas en el menú son realizadas por nosotros mismos con alimentos 100% naturales</p>
+            </div>
+            <div class="col span-1-of-4 box">
+                <i class="icon-big ion-settings"></i>
+                <h3 class="third-title">Menús personalizados</h3>
+                <p>
+                    Los menús son personalizables ajustandose al gusto y bolsillo de cada uno 
+                    <br>
+                    También contamos con mozos, mantelería y vajilla
+                </p>
+            </div>
+            <div class="col span-1-of-4 box">
+                <i class="icon-big ion-android-car"></i>
+                <h3 class="third-title">Accesibles</h3>
+                <p>Nos movemos a todo el departamento de Colonia sin costo alguno</p>
+            </div>
+            <div class="col span-1-of-4 box">
+                <i class="icon-big ion-android-restaurant"></i>
+                <h3 class="third-title">Postres</h3>
+                <p>Si estas organizando un cumpleaños y simplemente quieres finalizar la comida con un rico postre también los hacemos</p>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        // Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+    </script>
+</body>
+</html>
